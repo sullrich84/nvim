@@ -29,9 +29,9 @@ M.lazygit = {
 M.dap = {
   n = {
     ["<F5>"] = { ":lua require'dap'.continue()<CR>", "DAP continue" },
-    ["<F10>"] = { ":lua require'dap'.step_over()<CR>", "DAP step over" },
-    ["<F11>"] = { ":lua require'dap'.step_into()<CR>", "DAP step into" },
-    ["<F12>"] = { ":lua require'dap'.step_out()<CR>", "DAP step out" },
+    ["<F7>"] = { ":lua require'dap'.step_into()<CR>", "DAP step into" },
+    ["<F8>"] = { ":lua require'dap'.step_over()<CR>", "DAP step over" },
+    ["<F9>"] = { ":lua require'dap'.step_out()<CR>", "DAP step out" },
     ["<leader>b"] = { ":lua require'dap'.toggle_breakpoint()<CR>", "DAP toggle breakpoint" },
     ["<leader>B"] = {
       ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>",

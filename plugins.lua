@@ -25,11 +25,6 @@ local plugins = {
     },
     opts = {
       extensions_list = { "themes", "terms", "project", "dap" },
-      extensions = {
-        zoxide = {
-          prompt_title = "[ Walking on the shoulders of TJ ]",
-        },
-      },
     },
   },
 
@@ -68,6 +63,7 @@ local plugins = {
       "rcarriga/nvim-dap-ui",
       "mxsdev/nvim-dap-vscode-js",
       "theHamsta/nvim-dap-virtual-text",
+      "mxsdev/nvim-dap-vscode-js",
     },
     config = function()
       -- require "plugins.dap"
@@ -106,7 +102,10 @@ local plugins = {
         port = "${port}",
         executable = {
           command = "node",
-          args = { "/Users/sullrich/Downloads/js-debug/src/dapDebugServer.js", "${port}" },
+          args = {
+            vim.fn.stdpath "data" .. "/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js",
+            "${port}",
+          },
         },
       }
 
@@ -119,7 +118,7 @@ local plugins = {
             type = "pwa-node",
             program = "${file}",
             cwd = "${workspaceFolder}",
-            -- runtimeExecutable = vim.fn.getenv "HOME" .. "/.deno/bin/deno",
+            runtimeExecutable = vim.fn.getenv "HOME" .. "/.deno/bin/deno",
             runtimeArgs = {
               "run",
               "--inspect-wait",
@@ -208,19 +207,6 @@ local plugins = {
     config = function()
       require("better_escape").setup()
     end,
-  },
-
-  {
-    "jghauser/kitty-runner.nvim",
-    lazy = false,
-    config = function()
-      require("kitty-runner").setup()
-    end,
-  },
-
-  {
-    "weilbith/nvim-code-action-menu",
-    cmd = "CodeActionMenu",
   },
 
   {
