@@ -74,7 +74,7 @@ M.nvimtree = {
 
 M.switch = {
   n = {
-    ["S"] = { ":Switch <CR>", "Switch", opts = { silent = true } },
+    ["<C-a>"] = { ":call speeddating#increment(v:count1)<CR><CMD>Switch<CR>", "Switch", opts = { silent = true } },
   },
 }
 
