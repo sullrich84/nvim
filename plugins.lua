@@ -1,4 +1,4 @@
-local overrides = require "custom.configs.overrides"
+-- local overrides = require "custom.configs.overrides"
 
 local plugins = {
   {
@@ -28,28 +28,13 @@ local plugins = {
     },
   },
 
-  {
-    "williamboman/mason.nvim",
-    opts = overrides.mason,
-  },
-
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = overrides.treesitter,
-  },
-
-  {
-    "nvim-tree/nvim-tree.lua",
-    opts = overrides.nvimtree,
-  },
-
-  { "tommcdo/vim-exchange", lazy = false },
-  { "AndrewRadev/switch.vim", lazy = false },
-  { "tribela/vim-transparent", lazy = false },
+  { "tommcdo/vim-exchange",     lazy = false },
+  { "AndrewRadev/switch.vim",   lazy = false },
+  { "tribela/vim-transparent",  lazy = false },
   { "AndrewRadev/sideways.vim", lazy = false },
-  { "tpope/vim-surround", lazy = false },
-  { "tpope/vim-speeddating", lazy = false },
-  { "luochen1990/rainbow", lazy = false },
+  { "tpope/vim-surround",       lazy = false },
+  { "tpope/vim-speeddating",    lazy = false },
+  { "luochen1990/rainbow",      lazy = false },
 
   "NvChad/nvcommunity",
   { import = "nvcommunity.git.lazygit" },
@@ -63,6 +48,7 @@ local plugins = {
       "mxsdev/nvim-dap-vscode-js",
       "theHamsta/nvim-dap-virtual-text",
       "mxsdev/nvim-dap-vscode-js",
+      "nvim-neotest/nvim-nio",
     },
     config = function()
       require "custom.configs.dap"
@@ -105,6 +91,22 @@ local plugins = {
     dependencies = {
       { "nvim-tree/nvim-web-devicons" },
     },
+  },
+
+  -- Load NVCHAD stuff
+  {
+    "williamboman/mason.nvim",
+    opts = overrides.mason,
+  },
+
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = overrides.treesitter,
+  },
+
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = overrides.nvimtree,
   },
 }
 
