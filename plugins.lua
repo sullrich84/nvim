@@ -37,6 +37,7 @@ local plugins = {
       require("conform").setup(options)
     end,
   },
+
   {
     "nvim-telescope/telescope.nvim",
     dependencies = {
