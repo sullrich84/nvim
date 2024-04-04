@@ -18,6 +18,26 @@ local plugins = {
   },
 
   {
+    "stevearc/conform.nvim",
+    event = "BufWritePre",
+    config = function()
+      local options = {
+        formatters_by_ft = {
+          lua = { "stylua" },
+          python = { "black" },
+          -- html = { "prettier" },
+        },
+
+        -- format_on_save = {
+        --   -- These options will be passed to conform.format()
+        --   timeout_ms = 500,
+        --   lsp_fallback = true,
+        -- },
+      }
+      require("conform").setup(options)
+    end,
+  },
+  {
     "nvim-telescope/telescope.nvim",
     dependencies = {
       "nvim-telescope/telescope-project.nvim",
@@ -60,6 +80,7 @@ local plugins = {
     lazy = false,
     dependencies = {
       "rcarriga/nvim-dap-ui",
+      "nvim-neotest/nvim-nio",
       "mxsdev/nvim-dap-vscode-js",
       "theHamsta/nvim-dap-virtual-text",
       "mxsdev/nvim-dap-vscode-js",
